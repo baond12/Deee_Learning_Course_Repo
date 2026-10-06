@@ -45,21 +45,21 @@
         <div class="detail-grid">
           <article class="detail-card">
             <span class="card-label">Dataset</span>
-            <h3>Chưa khóa</h3>
+            <h3>CIFAR-100 subset</h3>
             <p>
-              Ứng viên: CIFAR-100, Tiny-ImageNet, Food-101, Stanford Cars hoặc subset
-              Kaggle/Hugging Face. Cần ghi license, split và lý do chọn trong A1.1.
+              Dùng 20 lớp đầu tiên, tối đa 500 ảnh train/lớp và 100 ảnh test/lớp để phù
+              hợp Colab T4. Split, license và lý do chọn được ghi trong A1.1.
             </p>
           </article>
           <article class="detail-card">
             <span class="card-label">CNN</span>
-            <h3>ResNet / ConvNeXt / EfficientNet</h3>
-            <p>Chạy ít nhất một họ CNN, có thể dùng pretrained từ torchvision hoặc timm.</p>
+            <h3>ResNet18</h3>
+            <p>So sánh from-scratch, freeze backbone/head-only, partial unfreeze và full fine-tune.</p>
           </article>
           <article class="detail-card">
             <span class="card-label">Transformer</span>
-            <h3>ViT / DeiT / Swin</h3>
-            <p>So sánh với CNN trên cùng split, cùng metric và cùng protocol báo cáo.</p>
+            <h3>ViT-B/16</h3>
+            <p>Chạy cùng split và cùng metric với ResNet18 để so sánh CNN vs Transformer.</p>
           </article>
         </div>
       </section>
@@ -103,4 +103,3 @@
     </footer>
   </body>
 </html>
-

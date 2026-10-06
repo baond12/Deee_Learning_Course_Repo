@@ -85,9 +85,14 @@ def plot_misclassified(
     axes_array = np.atleast_1d(axes).ravel()
 
     for ax, (image, true_label, pred_label) in zip(axes_array, mistakes):
-        # Undo MNIST normalization for display.
-        shown = image[0] * 0.3081 + 0.1307
-        ax.imshow(shown, cmap="gray")
+        if image.shape[0] == 1:
+            shown = image[0] * 0.3081 + 0.1307
+            ax.imshow(np.clip(shown, 0, 1), cmap="gray")
+        else:
+            mean = np.array([0.485, 0.456, 0.406]).reshape(3, 1, 1)
+            std = np.array([0.229, 0.224, 0.225]).reshape(3, 1, 1)
+            shown = np.transpose(image * std + mean, (1, 2, 0))
+            ax.imshow(np.clip(shown, 0, 1))
         ax.set_title(f"true {class_names[true_label]} / pred {class_names[pred_label]}", fontsize=8)
         ax.axis("off")
 
@@ -98,4 +103,3 @@ def plot_misclassified(
     fig.tight_layout()
     fig.savefig(path, dpi=180)
     plt.close(fig)
-

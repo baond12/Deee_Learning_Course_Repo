@@ -1,19 +1,64 @@
 # Assignment 1 - CNN vs Transformer
 
-Mục tiêu: so sánh CNN và Transformer trên một tập ảnh lớn hơn E1.
+Mục tiêu: so sánh CNN và Transformer trên **CIFAR-100 subset** với các chế độ
+from-scratch, pretrained freeze backbone/head-only, pretrained partial unfreeze và full
+fine-tune.
 
-## Checklist A1.1
+## Cấu trúc
 
-- Chọn dataset công khai và hợp lệ.
-- Mô tả license, split, augmentation và lý do chọn.
-- Liệt kê CNN/Transformer sẽ dùng.
-- Lập kế hoạch from-scratch, pretrained, freeze backbone, freeze một phần và full
-  fine-tune.
+- `data.py`: CIFAR-100 subset, split train/validation/test, augmentation.
+- `models.py`: ResNet18 và ViT-B/16 với các chế độ freeze/fine-tune.
+- `train.py`: training loop A1, lưu metric và hình phân tích.
+- `smoke_test.py`: kiểm tra model shape/trainable params, không tải weights/dataset.
+- `report.md`: bản nháp A1.1/A1.2.
+- `COLAB.md`: hướng dẫn chạy trên Google Colab.
+- `results/`: thư mục sinh kết quả sau khi train.
 
-## Checklist A1.2
+## Dataset
 
-- Chạy đủ thí nghiệm bắt buộc.
-- Báo cáo accuracy/F1, thời gian và số tham số trainable.
-- Có confusion matrix hoặc phân tích lỗi.
-- Cập nhật `reports/assignment1.pdf`.
+Mặc định dùng 20 lớp đầu tiên của CIFAR-100:
 
+- Tối đa 500 ảnh train/lớp.
+- Tối đa 100 ảnh test/lớp.
+- 10% training subset làm validation.
+- Resize ảnh về `224 x 224`.
+
+Subset là một phần dữ liệu được lấy theo quy tắc cố định để phù hợp GPU/Colab, nhưng
+vẫn phải ghi rõ protocol trong báo cáo.
+
+## Smoke test
+
+```bash
+python A1/smoke_test.py
+```
+
+## Train
+
+```bash
+python A1/train.py --experiments all --epochs 5 --batch-size 32 --device auto
+```
+
+Trên Colab GPU:
+
+```bash
+python A1/train.py --experiments all --epochs 5 --batch-size 32 --device cuda --progress
+```
+
+## Experiments
+
+- `resnet18_scratch`
+- `resnet18_pretrained_head`
+- `resnet18_pretrained_partial`
+- `resnet18_pretrained_full`
+- `vit_b16_scratch`
+- `vit_b16_pretrained_head`
+- `vit_b16_pretrained_partial`
+- `vit_b16_pretrained_full`
+
+## Kết quả đầu ra
+
+- `A1/results/summary.csv`
+- `A1/results/metrics.json`
+- `A1/results/learning_curves.png`
+- `A1/results/confusion_matrix_*.png`
+- `A1/results/misclassified_*.png`
