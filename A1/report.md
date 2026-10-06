@@ -101,11 +101,38 @@ Sau khi train, kết quả nằm trong `A1/results/`:
 
 - `summary.csv`: bảng so sánh chính.
 - `metrics.json`: cấu hình và metric chi tiết.
+- `analysis.md`: bảng tổng hợp và gợi ý nhận xét do `A1/analyze_results.py` sinh.
 - `learning_curves.png`: loss/accuracy curves.
+- `bar_test_accuracy.png`, `bar_macro_f1.png`, `bar_trainable_parameters.png`,
+  `bar_training_time_seconds.png`: biểu đồ so sánh A1.2.
 - `confusion_matrix_*.png`: confusion matrix từng experiment.
 - `misclassified_*.png`: mẫu dự đoán sai.
 
-## 9. Nhận xét dự kiến
+## 9. A1.2 - So sánh cuối
+
+Sau khi chạy đủ thí nghiệm, dùng:
+
+```bash
+python A1/analyze_results.py --results-dir A1/results
+```
+
+Phần báo cáo cuối cần bổ sung từ kết quả thật:
+
+1. Bảng `summary.csv`: accuracy, macro F1, thời gian, total/trainable parameters.
+2. Biểu đồ bar chart: test accuracy, macro F1, trainable parameters, training time.
+3. Learning curves: xem mô hình nào hội tụ nhanh/chậm, có overfit không.
+4. Confusion matrix và mẫu sai: chỉ ra các lớp CIFAR-100 subset dễ nhầm.
+5. Thảo luận:
+   - ResNet18 vs ViT-B/16 trên cùng split.
+   - From-scratch vs pretrained.
+   - Freeze backbone/head-only vs partial unfreeze vs full fine-tune.
+   - Khi nào freeze có lợi, khi nào full fine-tune đáng chi phí.
+   - ViT-B/16 có cần pretrained hơn ResNet18 không.
+
+Checkpoint là tùy chọn. Nếu bật `--save-checkpoints`, model được lưu ở
+`A1/checkpoints/`, nhưng các file model đã bị `.gitignore` chặn để không đẩy lên GitHub.
+
+## 10. Nhận xét dự kiến
 
 ResNet18 có inductive bias không gian mạnh nên thường học tốt hơn khi dữ liệu không quá
 lớn. ViT-B/16 có attention toàn cục và thường cần pretrained weights hoặc dữ liệu lớn để

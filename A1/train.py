@@ -54,6 +54,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--num-workers", type=int, default=2)
     parser.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto")
     parser.add_argument("--no-download-weights", action="store_true")
+    parser.add_argument("--save-checkpoints", action="store_true")
+    parser.add_argument("--checkpoint-dir", type=str, default="A1/checkpoints")
     parser.add_argument("--progress", action="store_true")
     return parser.parse_args()
 
@@ -84,6 +86,7 @@ def main() -> None:
     args = parse_args()
     set_seed(args.seed)
     out_dir = ensure_dir(args.output_dir)
+    checkpoint_dir = ensure_dir(args.checkpoint_dir)
     device = get_device(args.device)
     print(f"device: {device}")
 
@@ -151,6 +154,23 @@ def main() -> None:
             show_progress=args.progress,
         )
 
+        checkpoint_path = None
+        if args.save_checkpoints:
+            checkpoint_path = checkpoint_dir / f"{experiment}.pt"
+            torch.save(
+                {
+                    "experiment": experiment,
+                    "architecture": architecture,
+                    "mode": mode,
+                    "class_names": data.class_names,
+                    "state_dict": model.state_dict(),
+                    "best_epoch": result.best_epoch,
+                    "best_val_accuracy": result.best_val_accuracy,
+                },
+                checkpoint_path,
+            )
+            print(f"saved checkpoint: {checkpoint_path}")
+
         criterion = torch.nn.CrossEntropyLoss()
         test_metrics = evaluate(model, data.test_loader, criterion, device=device)
         y_true, y_pred, _probabilities, mistakes = collect_predictions(
@@ -197,6 +217,7 @@ def main() -> None:
         metrics_payload["experiments"][experiment] = {
             **row,
             "training_time_seconds": result.training_time_seconds,
+            "checkpoint_path": str(checkpoint_path) if checkpoint_path else None,
         }
         print(
             f"test loss {test_metrics.loss:.4f}, "

@@ -2,9 +2,18 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ipynb_checkpoints/
+.matplotlib-cache/
 
 data/
 datasets/
+checkpoints/
+A1/checkpoints/*.pt
+A1/checkpoints/*.pth
+A1/checkpoints/*.ckpt
+A1/checkpoints/*.safetensors
 *.pt
 *.pth
-
+*.ckpt
+*.safetensors
+!A1/checkpoints/
+!A1/checkpoints/README.md
