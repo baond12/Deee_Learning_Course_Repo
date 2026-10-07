@@ -1,0 +1,71 @@
+{
+  "dataset": "MNIST",
+  "split": {
+    "train": 54000,
+    "validation": 6000,
+    "test": 10000,
+    "val_ratio": 0.1,
+    "seed": 42
+  },
+  "training": {
+    "epochs": 20,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "device": "cuda"
+  },
+  "architecture": {
+    "embed_dim": 64,
+    "num_heads": 4,
+    "ffn_dim": 128,
+    "depth": 1,
+    "patch_size": 7,
+    "dropout": 0.1,
+    "pooling": "CLS token",
+    "positional_embedding": "learnable absolute positional embedding"
+  },
+  "experiments": {
+    "custom_patch": {
+      "experiment": "custom_patch",
+      "attention": "custom_msa",
+      "tokenization": "patch_7x7",
+      "parameters": 38602,
+      "best_epoch": 14,
+      "best_val_accuracy": 0.953333,
+      "test_loss": 0.143952,
+      "test_accuracy": 0.9563,
+      "macro_f1": 0.955523,
+      "training_time": "11m 0s",
+      "purpose": "MSA tự viết với patch tokens",
+      "training_time_seconds": 660.5927202739999
+    },
+    "pytorch_patch": {
+      "experiment": "pytorch_patch",
+      "attention": "pytorch_multihead_attention",
+      "tokenization": "patch_7x7",
+      "parameters": 38602,
+      "best_epoch": 16,
+      "best_val_accuracy": 0.964667,
+      "test_loss": 0.107396,
+      "test_accuracy": 0.9666,
+      "macro_f1": 0.966205,
+      "training_time": "10m 50s",
+      "purpose": "Đối chiếu PyTorch MSA trên cùng patch tokens",
+      "training_time_seconds": 650.7571519680002
+    },
+    "custom_row": {
+      "experiment": "custom_row",
+      "attention": "custom_msa",
+      "tokenization": "row_tokens",
+      "parameters": 38026,
+      "best_epoch": 19,
+      "best_val_accuracy": 0.9705,
+      "test_loss": 0.086659,
+      "test_accuracy": 0.974,
+      "macro_f1": 0.973801,
+      "training_time": "10m 37s",
+      "purpose": "So sánh tokenization: mỗi hàng ảnh là một token",
+      "training_time_seconds": 637.3706440440001
+    }
+  }
+}

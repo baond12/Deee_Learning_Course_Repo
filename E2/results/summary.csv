@@ -1,0 +1,4 @@
+experiment,attention,tokenization,parameters,best_epoch,best_val_accuracy,test_loss,test_accuracy,macro_f1,training_time
+custom_patch,custom_msa,patch_7x7,38602,14,0.953333,0.143952,0.9563,0.955523,11m 0s
+pytorch_patch,pytorch_multihead_attention,patch_7x7,38602,16,0.964667,0.107396,0.9666,0.966205,10m 50s
+custom_row,custom_msa,row_tokens,38026,19,0.9705,0.086659,0.974,0.973801,10m 37s
