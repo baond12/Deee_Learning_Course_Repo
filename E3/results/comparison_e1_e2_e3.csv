@@ -1,0 +1,13 @@
+model,parameters,best_epoch,best_val_accuracy,test_loss,test_accuracy,macro_f1,training_time,source,experiment,attention,tokenization,family,sequence
+softmax,7850,5,0.9155,0.29577,0.9209,0.919632,6m 58s,E1,,,,,
+mlp,235146,14,0.977,0.077527,0.9782,0.978016,7m 51s,E1,,,,,
+cnn,421642,20,0.9915,0.027936,0.9917,0.991646,8m 24s,E1,,,,,
+,38602,14,0.953333,0.143952,0.9563,0.955523,11m 0s,E2,custom_patch,custom_msa,patch_7x7,,
+,38602,16,0.964667,0.107396,0.9666,0.966205,10m 50s,E2,pytorch_patch,pytorch_multihead_attention,patch_7x7,,
+,38026,19,0.9705,0.086659,0.974,0.973801,10m 37s,E2,custom_row,custom_msa,row_tokens,,
+,82186,15,0.987667,0.041651,0.9869,0.986827,8m 16s,E3,lstm_row,,,LSTM,row
+,61962,9,0.988167,0.036855,0.9887,0.988574,8m 36s,E3,gru_row,,,GRU,row
+,92938,17,0.981333,0.071337,0.9798,0.979603,8m 53s,E3,lstm_patch,,,LSTM,patch_7x7
+,70026,20,0.979667,0.073756,0.9784,0.978211,8m 55s,E3,gru_patch,,,GRU,patch_7x7
+,235146,19,0.9765,0.076245,0.9795,0.979267,8m 16s,E3,mlp_baseline,,,MLP,flatten
+,421642,15,0.991333,0.029063,0.992,0.991939,9m 3s,E3,cnn_baseline,,,CNN,spatial

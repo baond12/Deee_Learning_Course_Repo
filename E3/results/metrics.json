@@ -1,0 +1,111 @@
+{
+  "dataset": "MNIST",
+  "split": {
+    "train": 54000,
+    "validation": 6000,
+    "test": 10000,
+    "val_ratio": 0.1,
+    "seed": 42
+  },
+  "training": {
+    "epochs": 20,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "device": "cuda"
+  },
+  "rnn_config": {
+    "hidden_dim": 128,
+    "num_layers": 1,
+    "patch_size": 7,
+    "dropout": 0.1,
+    "bidirectional": false,
+    "readout": "last timestep"
+  },
+  "experiments": {
+    "lstm_row": {
+      "experiment": "lstm_row",
+      "family": "LSTM",
+      "sequence": "row",
+      "parameters": 82186,
+      "best_epoch": 15,
+      "best_val_accuracy": 0.987667,
+      "test_loss": 0.041651,
+      "test_accuracy": 0.9869,
+      "macro_f1": 0.986827,
+      "training_time": "8m 16s",
+      "purpose": "LSTM với mỗi hàng là một timestep",
+      "training_time_seconds": 496.9749493720001
+    },
+    "gru_row": {
+      "experiment": "gru_row",
+      "family": "GRU",
+      "sequence": "row",
+      "parameters": 61962,
+      "best_epoch": 9,
+      "best_val_accuracy": 0.988167,
+      "test_loss": 0.036855,
+      "test_accuracy": 0.9887,
+      "macro_f1": 0.988574,
+      "training_time": "8m 36s",
+      "purpose": "GRU với mỗi hàng là một timestep",
+      "training_time_seconds": 516.6471304920005
+    },
+    "lstm_patch": {
+      "experiment": "lstm_patch",
+      "family": "LSTM",
+      "sequence": "patch_7x7",
+      "parameters": 92938,
+      "best_epoch": 17,
+      "best_val_accuracy": 0.981333,
+      "test_loss": 0.071337,
+      "test_accuracy": 0.9798,
+      "macro_f1": 0.979603,
+      "training_time": "8m 53s",
+      "purpose": "LSTM với chuỗi patch 7x7",
+      "training_time_seconds": 533.4449761819997
+    },
+    "gru_patch": {
+      "experiment": "gru_patch",
+      "family": "GRU",
+      "sequence": "patch_7x7",
+      "parameters": 70026,
+      "best_epoch": 20,
+      "best_val_accuracy": 0.979667,
+      "test_loss": 0.073756,
+      "test_accuracy": 0.9784,
+      "macro_f1": 0.978211,
+      "training_time": "8m 55s",
+      "purpose": "GRU với chuỗi patch 7x7",
+      "training_time_seconds": 535.913618648
+    },
+    "mlp_baseline": {
+      "experiment": "mlp_baseline",
+      "family": "MLP",
+      "sequence": "flatten",
+      "parameters": 235146,
+      "best_epoch": 19,
+      "best_val_accuracy": 0.9765,
+      "test_loss": 0.076245,
+      "test_accuracy": 0.9795,
+      "macro_f1": 0.979267,
+      "training_time": "8m 16s",
+      "purpose": "Baseline không hồi quy từ E1",
+      "training_time_seconds": 496.60915882100016
+    },
+    "cnn_baseline": {
+      "experiment": "cnn_baseline",
+      "family": "CNN",
+      "sequence": "spatial",
+      "parameters": 421642,
+      "best_epoch": 15,
+      "best_val_accuracy": 0.991333,
+      "test_loss": 0.029063,
+      "test_accuracy": 0.992,
+      "macro_f1": 0.991939,
+      "training_time": "9m 3s",
+      "purpose": "Baseline không hồi quy từ E1",
+      "training_time_seconds": 543.7557550969996
+    }
+  }
+}

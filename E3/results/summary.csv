@@ -1,0 +1,7 @@
+experiment,family,sequence,parameters,best_epoch,best_val_accuracy,test_loss,test_accuracy,macro_f1,training_time
+lstm_row,LSTM,row,82186,15,0.987667,0.041651,0.9869,0.986827,8m 16s
+gru_row,GRU,row,61962,9,0.988167,0.036855,0.9887,0.988574,8m 36s
+lstm_patch,LSTM,patch_7x7,92938,17,0.981333,0.071337,0.9798,0.979603,8m 53s
+gru_patch,GRU,patch_7x7,70026,20,0.979667,0.073756,0.9784,0.978211,8m 55s
+mlp_baseline,MLP,flatten,235146,19,0.9765,0.076245,0.9795,0.979267,8m 16s
+cnn_baseline,CNN,spatial,421642,15,0.991333,0.029063,0.992,0.991939,9m 3s
