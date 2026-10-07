@@ -1,0 +1,52 @@
+{
+  "dataset": "MNIST",
+  "split": {
+    "train": 54000,
+    "validation": 6000,
+    "test": 10000,
+    "val_ratio": 0.1,
+    "seed": 42
+  },
+  "training": {
+    "epochs": 20,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "device": "cuda"
+  },
+  "models": {
+    "softmax": {
+      "model": "softmax",
+      "parameters": 7850,
+      "best_epoch": 5,
+      "best_val_accuracy": 0.9155,
+      "test_loss": 0.29577,
+      "test_accuracy": 0.9209,
+      "macro_f1": 0.919632,
+      "training_time": "6m 58s",
+      "training_time_seconds": 418.3644170529999
+    },
+    "mlp": {
+      "model": "mlp",
+      "parameters": 235146,
+      "best_epoch": 14,
+      "best_val_accuracy": 0.977,
+      "test_loss": 0.077527,
+      "test_accuracy": 0.9782,
+      "macro_f1": 0.978016,
+      "training_time": "7m 51s",
+      "training_time_seconds": 471.26361963600016
+    },
+    "cnn": {
+      "model": "cnn",
+      "parameters": 421642,
+      "best_epoch": 20,
+      "best_val_accuracy": 0.9915,
+      "test_loss": 0.027936,
+      "test_accuracy": 0.9917,
+      "macro_f1": 0.991646,
+      "training_time": "8m 24s",
+      "training_time_seconds": 504.7078768380002
+    }
+  }
+}
