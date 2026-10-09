@@ -25,10 +25,11 @@
     <main>
       <section class="page-hero">
         <p class="eyebrow">Bài tập lớn A2</p>
-        <h1>Chủ đề tự chọn và phân tích paper</h1>
+        <h1>Đếm phương tiện giao thông bằng S-DCNet</h1>
         <p>
-          Chọn một bài toán CV không trùng phân loại ảnh thuần của A1, xây dựng pipeline
-          chạy được, so sánh ít nhất hai biến thể và phân tích một paper liên quan.
+          Assignment 2 tập trung vào bài toán đếm số lượng phương tiện trong ảnh camera giao thông.
+          Paper baseline được chọn là S-DCNet, mục tiêu là reproduce kết quả trên TRANCOS
+          và phân tích khả năng dùng số lượng xe như một chỉ báo liên quan đến mật độ giao thông.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="../Exercise/assignment2-vne.pdf">Đề A2 PDF</a>
@@ -39,25 +40,40 @@
 
       <section class="section">
         <div class="section-heading">
-          <p class="section-kicker">Topic board</p>
-          <h2>Ứng viên chủ đề</h2>
+          <p class="section-kicker">Selected topic</p>
+          <h2>Chủ đề đã chốt</h2>
         </div>
         <div class="detail-grid">
           <article class="detail-card">
-            <span class="card-label">Segmentation</span>
-            <h3>U-Net / DeepLab / SegFormer</h3>
-            <p>Dataset gợi ý: Pascal VOC, ADE20K, Cityscapes, CamVid. Metric: mIoU, Dice.</p>
+            <span class="card-label">Task</span>
+            <h3>Vehicle counting</h3>
+            <p>Đầu vào là ảnh từ camera giao thông; đầu ra là số lượng phương tiện trong ảnh.</p>
           </article>
           <article class="detail-card">
-            <span class="card-label">Detection</span>
-            <h3>YOLO / Faster R-CNN / DETR</h3>
-            <p>Dataset gợi ý: COCO, Pascal VOC, Open Images subset, KITTI. Metric: mAP.</p>
+            <span class="card-label">Dataset</span>
+            <h3>TRANCOS</h3>
+            <p>Dataset dùng cho bài toán vehicle counting trong bối cảnh camera giao thông.</p>
           </article>
           <article class="detail-card">
-            <span class="card-label">ReID / Generative</span>
-            <h3>Metric learning / GAN / VAE / Diffusion</h3>
-            <p>Chọn metric đúng bài toán như Recall@k, mAP, FID hoặc IS nếu phù hợp.</p>
+            <span class="card-label">Baseline paper</span>
+            <h3>S-DCNet, ICCV 2019</h3>
+            <p>Spatial Divide-and-Conquer Network chia không gian ảnh thành vùng cục bộ để ước lượng số lượng đối tượng.</p>
           </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="section-kicker">Reproduction plan</p>
+          <h2>Hướng reproduce baseline</h2>
+        </div>
+        <div class="check-grid">
+          <span>Đọc lại paper S-DCNet và xác định input, output, loss, metric chính</span>
+          <span>Kiểm tra official code, checkpoint và pipeline xử lý TRANCOS</span>
+          <span>Chạy lại baseline S-DCNet trên TRANCOS hoặc subset có giải thích rõ</span>
+          <span>Báo cáo MAE, GAME nếu reproduce được đúng protocol của paper</span>
+          <span>Phân tích ảnh dự đoán sai, cảnh đông xe, che khuất và góc camera khó</span>
+          <span>Làm rõ vehicle count khác với physical traffic density</span>
         </div>
       </section>
 
@@ -69,11 +85,11 @@
         <div class="timeline">
           <div class="timeline-row">
             <time datetime="2026-11-02">02/11/2026</time>
-            <span>A2.1 - khóa chủ đề, citation paper, dataset, metric và kế hoạch pipeline</span>
+            <span>A2.1 - khóa chủ đề vehicle counting, paper S-DCNet, dataset TRANCOS, metric và kế hoạch reproduce</span>
           </div>
           <div class="timeline-row">
             <time datetime="2026-11-16">16/11/2026</time>
-            <span>A2.2 - pipeline chạy được, so sánh ít nhất hai biến thể, phân tích paper</span>
+            <span>A2.2 - pipeline chạy được, reproduce baseline, so sánh biến thể và phân tích paper</span>
           </div>
         </div>
       </section>
@@ -84,12 +100,12 @@
           <h2>Nội dung bắt buộc</h2>
         </div>
         <div class="check-grid">
-          <span>Phương pháp, kiến trúc, loss và giả thiết</span>
-          <span>Thí nghiệm trong paper: dataset, metric, kết luận</span>
-          <span>Hạn chế và failure cases</span>
-          <span>Liên hệ với pipeline của nhóm</span>
-          <span>So sánh ít nhất hai phương pháp hoặc biến thể</span>
-          <span>Video demo hoặc video trình bày nếu có</span>
+          <span>Tóm tắt literature review và lý do chọn S-DCNet làm baseline</span>
+          <span>Mô tả bài toán vehicle counting, dataset TRANCOS và protocol đánh giá</span>
+          <span>Phân tích kiến trúc Spatial Divide-and-Conquer, loss và giả thiết của paper</span>
+          <span>Trình bày kết quả reproduce: MAE, GAME, thời gian chạy và cấu hình train</span>
+          <span>So sánh baseline với ít nhất một biến thể hoặc một phương pháp tham chiếu nếu kịp</span>
+          <span>Nêu hạn chế: đếm xe không đồng nghĩa trực tiếp với mật độ giao thông vật lý</span>
         </div>
       </section>
     </main>
