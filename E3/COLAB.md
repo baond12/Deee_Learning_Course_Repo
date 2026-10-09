@@ -1,4 +1,4 @@
-﻿# Cháº¡y E3 trÃªn Google Colab
+# Chạy E3 trên Google Colab
 
 ## 1. Clone repo
 
@@ -7,7 +7,7 @@
 %cd Deep_Learning_Course_HK261
 ```
 
-## 2. CÃ i dependencies
+## 2. Cài dependencies
 
 ```bash
 !pip install -r requirements.txt
@@ -19,13 +19,13 @@
 !python E3/smoke_test.py
 ```
 
-## 4. Train áº£nh MNIST dáº¡ng chuá»—i
+## 4. Train ảnh MNIST dạng chuỗi
 
 ```bash
 !python E3/train.py --experiments all --epochs 5 --batch-size 128 --device cuda --progress
 ```
 
-Náº¿u khÃ´ng cÃ³ GPU:
+Nếu không có GPU:
 
 ```bash
 !python E3/train.py --experiments all --epochs 5 --batch-size 128 --device cpu --progress
@@ -38,15 +38,15 @@ Náº¿u khÃ´ng cÃ³ GPU:
 !python E3/train_sentiment.py --rnn-type gru --epochs 5 --device cuda
 ```
 
-## 6. Káº¿t quáº£
+## 6. Kết quả
 
-Káº¿t quáº£ áº£nh náº±m á»Ÿ:
+Kết quả ảnh nằm ở:
 
 ```text
 E3/results/
 ```
 
-CÃ¡c file chÃ­nh:
+Các file chính:
 
 - `summary.csv`
 - `comparison_e1_e2_e3.csv`
@@ -55,7 +55,7 @@ CÃ¡c file chÃ­nh:
 - `confusion_matrix_*.png`
 - `misclassified_*.png`
 
-Káº¿t quáº£ sentiment náº±m á»Ÿ:
+Kết quả sentiment nằm ở:
 
 ```text
 E3/results/sentiment/

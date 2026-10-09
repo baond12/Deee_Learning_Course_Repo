@@ -1,4 +1,4 @@
-﻿# Cháº¡y A1 trÃªn Google Colab
+# Chạy A1 trên Google Colab
 
 ## 1. Clone repo
 
@@ -7,7 +7,7 @@
 %cd Deep_Learning_Course_HK261
 ```
 
-## 2. CÃ i dependencies
+## 2. Cài dependencies
 
 ```bash
 !pip install -r requirements.txt
@@ -19,31 +19,31 @@
 !python A1/smoke_test.py
 ```
 
-## 4. Train cÃ¡c thÃ­ nghiá»‡m A1
+## 4. Train các thí nghiệm A1
 
-Máº·c Ä‘á»‹nh dÃ¹ng CIFAR-100 subset gá»“m 20 lá»›p Ä‘áº§u tiÃªn, tá»‘i Ä‘a 500 áº£nh train/lá»›p vÃ  100 áº£nh
-test/lá»›p. áº¢nh Ä‘Æ°á»£c resize vá» `224 x 224`.
+Mặc định dùng CIFAR-100 subset gồm 20 lớp đầu tiên, tối đa 500 ảnh train/lớp và 100 ảnh
+test/lớp. Ảnh được resize về `224 x 224`.
 
 ```bash
 !python A1/train.py --experiments all --epochs 5 --batch-size 32 --device cuda --progress
 ```
 
-Náº¿u muá»‘n lÆ°u checkpoint trong phiÃªn Colab nhÆ°ng khÃ´ng push model lÃªn repo:
+Nếu muốn lưu checkpoint trong phiên Colab nhưng không push model lên repo:
 
 ```bash
 !python A1/train.py --experiments all --epochs 5 --batch-size 32 --device cuda --progress --save-checkpoints
 ```
 
-Checkpoint sáº½ náº±m trong `A1/checkpoints/`. CÃ¡c file model `.pt/.pth/.ckpt/.safetensors`
-Ä‘Ã£ Ä‘Æ°á»£c `.gitignore` cháº·n.
+Checkpoint sẽ nằm trong `A1/checkpoints/`. Các file model `.pt/.pth/.ckpt/.safetensors`
+đã được `.gitignore` chặn.
 
-Náº¿u muá»‘n cháº¡y thá»­ nhanh má»™t vÃ i thÃ­ nghiá»‡m:
+Nếu muốn chạy thử nhanh một vài thí nghiệm:
 
 ```bash
 !python A1/train.py --experiments resnet18_scratch resnet18_pretrained_head vit_b16_pretrained_head --epochs 1 --batch-size 32 --device cuda --progress
 ```
 
-## 5. Táº¡o phÃ¢n tÃ­ch A1.2
+## 5. Tạo phân tích A1.2
 
 Sau khi train xong:
 
@@ -51,17 +51,17 @@ Sau khi train xong:
 !python A1/analyze_results.py --results-dir A1/results
 ```
 
-Script nÃ y táº¡o `analysis.md` vÃ  cÃ¡c bar chart Ä‘á»ƒ Ä‘Æ°a vÃ o bÃ¡o cÃ¡o A1.2.
+Script này tạo `analysis.md` và các bar chart để đưa vào báo cáo A1.2.
 
-## 6. Káº¿t quáº£
+## 6. Kết quả
 
-Káº¿t quáº£ náº±m á»Ÿ:
+Kết quả nằm ở:
 
 ```text
 A1/results/
 ```
 
-CÃ¡c file chÃ­nh:
+Các file chính:
 
 - `summary.csv`
 - `metrics.json`

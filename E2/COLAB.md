@@ -1,4 +1,4 @@
-﻿# Cháº¡y E2 trÃªn Google Colab
+# Chạy E2 trên Google Colab
 
 ## 1. Clone repo
 
@@ -7,39 +7,39 @@
 %cd Deep_Learning_Course_HK261
 ```
 
-## 2. CÃ i dependencies
+## 2. Cài dependencies
 
 ```bash
 !pip install -r requirements.txt
 ```
 
-## 3. Train cÃ¡c cáº¥u hÃ¬nh E2
+## 3. Train các cấu hình E2
 
 ```bash
 !python E2/train.py --experiments all --epochs 5 --batch-size 128 --device cuda --progress
 ```
 
-Náº¿u runtime khÃ´ng cÃ³ GPU:
+Nếu runtime không có GPU:
 
 ```bash
 !python E2/train.py --experiments all --epochs 5 --batch-size 128 --device cpu --progress
 ```
 
-## 4. Test nhanh code vá»›i 1 epoch
+## 4. Test nhanh code với 1 epoch
 
 ```bash
 !python E2/train.py --experiments all --epochs 1 --batch-size 128 --device cuda --progress
 ```
 
-## 5. Káº¿t quáº£
+## 5. Kết quả
 
-Káº¿t quáº£ náº±m á»Ÿ:
+Kết quả nằm ở:
 
 ```text
 E2/results/
 ```
 
-CÃ¡c file quan trá»ng:
+Các file quan trọng:
 
 - `summary.csv`
 - `metrics.json`
@@ -47,9 +47,9 @@ CÃ¡c file quan trá»ng:
 - `confusion_matrix_*.png`
 - `misclassified_*.png`
 
-## 6. ÄÆ°a káº¿t quáº£ vá» repo
+## 6. Đưa kết quả về repo
 
-CÃ¡ch Ä‘Æ¡n giáº£n: táº£i thÆ° má»¥c `E2/results/` tá»« Colab vá» mÃ¡y, copy vÃ o repo local rá»“i cháº¡y:
+Cách đơn giản: tải thư mục `E2/results/` từ Colab về máy, copy vào repo local rồi chạy:
 
 ```powershell
 git add E2/results E2/report.md
