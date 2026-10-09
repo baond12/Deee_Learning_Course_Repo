@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Assignment A1 - CO5085</title>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=20261009-dashboard" />
+    <title>Assignment 1 - CO5085</title>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20261009-research-dashboard" />
   </head>
   <body>
     <header class="site-header">
@@ -12,13 +12,13 @@
         <span class="brand-mark">DL</span>
         <span>
           <strong>CO5085</strong>
-          <small>Assignment A1</small>
+          <small>Assignment 1</small>
         </span>
       </a>
       <nav class="nav-links" aria-label="Điều hướng chính">
         <a href="../index.html">Home</a>
         <a href="exercises.html">Exercise</a>
-        <a href="assignment1.html">Assignment 1</a>
+        <a class="nav-active" aria-current="page" href="assignment1.html">Assignment 1</a>
         <a href="assignment2.html">Assignment 2</a>
         <a href="https://github.com/baond12/Deep_Learning_Course_HK261" target="_blank" rel="noreferrer">Github</a>
       </nav>
@@ -33,9 +33,9 @@
           from-scratch, pretrained và các chế độ freeze/fine-tune.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="../Exercise/assignment1-vne.pdf">Đề A1 PDF</a>
-          <a class="button button-secondary" href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1" target="_blank" rel="noreferrer">Code A1</a>
-          <a class="button button-secondary" href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/reports/assignment1.pdf" target="_blank" rel="noreferrer">Báo cáo A1</a>
+          <a class="button button-primary" href="../Exercise/assignment1-vne.pdf">Đề Assignment 1 PDF</a>
+          <a class="button button-secondary" href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1" target="_blank" rel="noreferrer">Code Assignment 1</a>
+          <a class="button button-secondary" href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/A1/report.md" target="_blank" rel="noreferrer">Report draft</a>
         </div>
       </section>
 
@@ -45,6 +45,11 @@
           <h2>Khung thí nghiệm</h2>
         </div>
         <div class="detail-grid">
+          <article class="detail-card">
+            <span class="card-label">Status</span>
+            <h3>In progress</h3>
+            <p>Đã có code, protocol và report draft. Kết quả ViT pretrained cuối đang chờ chạy tiếp trên GPU/server.</p>
+          </article>
           <article class="detail-card">
             <span class="card-label">Dataset</span>
             <h3>CIFAR-100 subset</h3>
@@ -69,16 +74,16 @@
       <section class="section two-column">
         <div>
           <p class="section-kicker">Mốc nộp</p>
-          <h2>A1.1 và A1.2</h2>
+          <h2>Assignment 1.1 và 1.2</h2>
         </div>
         <div class="timeline">
           <div class="timeline-row">
             <time datetime="2026-10-26">26/10/2026</time>
-            <span>A1.1 - dataset, split/augmentation, kiến trúc, kế hoạch freeze/pretrain</span>
+            <span>Assignment 1.1 - dataset, split/augmentation, kiến trúc, kế hoạch freeze/pretrain</span>
           </div>
           <div class="timeline-row">
             <time datetime="2026-11-09">09/11/2026</time>
-            <span>A1.2 - đủ thí nghiệm, bảng số liệu, biểu đồ, thảo luận và code tái lập</span>
+            <span>Assignment 1.2 - đủ thí nghiệm, bảng số liệu, biểu đồ, thảo luận và code tái lập</span>
           </div>
         </div>
       </section>
@@ -95,6 +100,7 @@
           <span>Accuracy/F1, thời gian, trainable params</span>
           <span>Confusion matrix hoặc phân tích lỗi</span>
           <span>Thảo luận freeze, pretrain và full fine-tune</span>
+          <span>Pending experimental results cho các cấu hình ViT pretrained còn thiếu</span>
         </div>
       </section>
     </main>

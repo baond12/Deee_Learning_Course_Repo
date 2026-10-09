@@ -1,15 +1,15 @@
 :root {
-  --ink: #1f2933;
-  --muted: #667085;
+  --ink: #172033;
+  --muted: #64748b;
   --line: #d7dee8;
   --paper: #ffffff;
-  --surface: #f5f7fb;
-  --deep: #10233f;
+  --surface: #f8fafc;
+  --deep: #0b172a;
   --teal: #0f766e;
   --red: #b42318;
   --amber: #b7791f;
   --blue: #1d4ed8;
-  --shadow: 0 18px 45px rgba(16, 35, 63, 0.11);
+  --shadow: 0 16px 42px rgba(15, 23, 42, 0.1);
 }
 
 * {
@@ -20,9 +20,11 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--surface);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  color-scheme: light;
+  font-family: Inter, "Segoe UI", Roboto, "Noto Sans", Arial, ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -82,6 +84,7 @@ a:hover {
   flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .nav-links a {
@@ -92,22 +95,37 @@ a:hover {
   white-space: nowrap;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links .nav-active {
   background: #e9eef5;
+  color: var(--deep);
+  outline: none;
+}
+
+.nav-links a:focus-visible,
+.button:focus-visible,
+.card-actions a:focus-visible,
+.link-panel a:focus-visible,
+.progress-row a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2);
 }
 
 .hero {
   position: relative;
   display: grid;
-  min-height: 72vh;
-  align-items: end;
+  min-height: clamp(520px, 62vh, 680px);
+  align-items: center;
   overflow: hidden;
-  background-position: center;
-  background-size: cover;
+  background:
+    radial-gradient(circle at 78% 28%, rgba(15, 118, 110, 0.28), transparent 32%),
+    linear-gradient(135deg, #0b172a 0%, #10233f 54%, #0f3f45 100%);
 }
 
 .hero-home {
-  background-image: url("../img/course-roadmap.png");
+  background:
+    radial-gradient(circle at 78% 28%, rgba(15, 118, 110, 0.28), transparent 32%),
+    linear-gradient(135deg, #0b172a 0%, #10233f 54%, #0f3f45 100%);
 }
 
 .hero-shade {
@@ -119,11 +137,35 @@ a:hover {
 }
 
 .hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.85fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
   position: relative;
-  width: min(860px, calc(100% - 36px));
-  padding: 112px 0 80px;
+  width: min(1180px, calc(100% - 36px));
+  padding: clamp(70px, 8vw, 96px) 0 clamp(56px, 7vw, 76px);
   margin: 0 auto;
   color: #ffffff;
+}
+
+.hero-copy-block {
+  min-width: 0;
+  z-index: 1;
+}
+
+.hero-visual {
+  min-width: 0;
+  margin: 0;
+  opacity: 0.62;
+  transform: translateX(2%);
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  filter: saturate(0.9) contrast(0.95);
 }
 
 .eyebrow,
@@ -149,7 +191,7 @@ h3 {
 
 h1 {
   max-width: 760px;
-  font-size: clamp(2.6rem, 7vw, 5.7rem);
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
   letter-spacing: 0;
 }
 
@@ -169,7 +211,7 @@ p {
 .page-hero p {
   max-width: 760px;
   margin-top: 20px;
-  font-size: clamp(1rem, 2vw, 1.18rem);
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
 }
 
 .hero-actions,
@@ -196,6 +238,10 @@ p {
   backdrop-filter: blur(10px);
   font-size: 0.92rem;
   font-weight: 720;
+}
+
+.hero-meta .status-chip {
+  border-color: rgba(255, 255, 255, 0.24);
 }
 
 .button,
@@ -283,10 +329,17 @@ p {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.coursework-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+
 .info-card,
 .submission-card,
 .work-card,
-.detail-card {
+.detail-card,
+.course-card {
   min-width: 0;
   padding: 22px;
   border: 1px solid var(--line);
@@ -297,11 +350,30 @@ p {
 
 .submission-card,
 .work-card,
-.detail-card {
+.detail-card,
+.course-card {
   display: flex;
   min-height: 260px;
   flex-direction: column;
   gap: 16px;
+}
+
+.course-card {
+  min-height: 300px;
+}
+
+.course-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.course-card-top time {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 760;
 }
 
 .card-label,
@@ -345,6 +417,20 @@ p {
 .card-actions a {
   padding: 8px 10px;
   background: #edf4f2;
+}
+
+.pending-list {
+  display: grid;
+  gap: 10px;
+}
+
+.pending-list span {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: #f8fafc;
+  font-weight: 720;
 }
 
 .progress-board {
@@ -542,12 +628,22 @@ p {
   .work-grid,
   .detail-grid,
   .check-grid,
+  .coursework-grid,
   .quick-grid {
     grid-template-columns: 1fr 1fr;
   }
 
   .two-column {
     grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    max-width: 560px;
+    opacity: 0.38;
   }
 
   .progress-row {
@@ -559,10 +655,21 @@ p {
   .site-header {
     align-items: flex-start;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .nav-links {
-    justify-content: flex-start;
+    display: grid;
+    width: calc(100vw - 36px);
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+  }
+
+  .nav-links a {
+    justify-content: center;
+    min-width: 0;
+    text-align: center;
   }
 
   .hero {
@@ -573,14 +680,39 @@ p {
     padding: 92px 0 52px;
   }
 
+  .hero-actions,
+  .hero-actions .button,
+  .hero-meta,
+  .hero-meta span {
+    width: 100%;
+  }
+
+  .hero-visual {
+    width: 100%;
+    overflow: hidden;
+    opacity: 0.32;
+    transform: none;
+  }
+
+  .hero-visual img {
+    width: 112%;
+    max-width: none;
+    transform: translateX(-6%);
+  }
+
   .info-grid,
   .submission-grid,
   .work-grid,
   .detail-grid,
   .check-grid,
+  .coursework-grid,
   .quick-grid,
   .link-panel {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
   }
 
   .timeline-row {

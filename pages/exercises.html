@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Exercise E1-E3 - CO5085</title>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=20261009-dashboard" />
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20261009-research-dashboard" />
   </head>
   <body>
     <header class="site-header">
@@ -17,7 +17,7 @@
       </a>
       <nav class="nav-links" aria-label="Điều hướng chính">
         <a href="../index.html">Home</a>
-        <a href="exercises.html">Exercise</a>
+        <a class="nav-active" aria-current="page" href="exercises.html">Exercise</a>
         <a href="assignment1.html">Assignment 1</a>
         <a href="assignment2.html">Assignment 2</a>
         <a href="https://github.com/baond12/Deep_Learning_Course_HK261" target="_blank" rel="noreferrer">Github</a>
@@ -29,18 +29,14 @@
         <p class="eyebrow">Coursework 40%</p>
         <h1>Exercise E1-E3</h1>
         <p>
-          Ba bài dùng cùng một tập ảnh nhỏ, tự viết training loop PyTorch và cập nhật một
-          báo cáo PDF chung cho tất cả E1-E3.
+          Ba bài dùng cùng một tập ảnh nhỏ, tự viết training loop PyTorch và có report,
+          kết quả thực nghiệm, confusion matrix, learning curves cho từng bài.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="../Exercise/exercise-vne.pdf">Đề Exercise PDF</a>
-          <a
-            class="button button-secondary"
-            href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/reports/exercises.pdf"
-            target="_blank"
-            rel="noreferrer"
-            >Báo cáo E1-E3</a
-          >
+          <a class="button button-secondary" href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E1/report.md" target="_blank" rel="noreferrer">Report E1</a>
+          <a class="button button-secondary" href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E2/report.md" target="_blank" rel="noreferrer">Report E2</a>
+          <a class="button button-secondary" href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E3/report.md" target="_blank" rel="noreferrer">Report E3</a>
         </div>
       </section>
 
@@ -51,7 +47,7 @@
         </div>
         <div class="work-grid">
           <article class="work-card">
-            <span class="status-pill">Hạn 02/11/2026</span>
+            <span class="status-pill status-done">Completed - 02/11/2026</span>
             <h3>E1 - Softmax, MLP, CNN</h3>
             <p>
               Phân loại ảnh nhỏ bằng softmax classifier, MLP và CNN; so sánh accuracy,
@@ -65,7 +61,7 @@
           </article>
 
           <article class="work-card">
-            <span class="status-pill">Hạn 02/11/2026</span>
+            <span class="status-pill status-done">Completed - 02/11/2026</span>
             <h3>E2 - MSA và tokenization</h3>
             <p>
               Hiện thực Multi-Head Self-Attention từ đầu và bằng PyTorch, thử ít nhất hai
@@ -79,7 +75,7 @@
           </article>
 
           <article class="work-card">
-            <span class="status-pill">Hạn 09/11/2026</span>
+            <span class="status-pill status-done">Completed - 09/11/2026</span>
             <h3>E3 - LSTM / GRU trên chuỗi ảnh</h3>
             <p>
               Biểu diễn ảnh thành chuỗi, huấn luyện LSTM và GRU, rồi so sánh với baseline
@@ -119,7 +115,9 @@
           <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E1" target="_blank" rel="noreferrer">Code E1</a>
           <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E2" target="_blank" rel="noreferrer">Code E2</a>
           <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E3" target="_blank" rel="noreferrer">Code E3</a>
-          <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/reports/exercises.pdf" target="_blank" rel="noreferrer">reports/exercises.pdf</a>
+          <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E1/results" target="_blank" rel="noreferrer">Results E1</a>
+          <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E2/results" target="_blank" rel="noreferrer">Results E2</a>
+          <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E3/results" target="_blank" rel="noreferrer">Results E3</a>
         </div>
       </section>
     </main>

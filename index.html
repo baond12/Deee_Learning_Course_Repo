@@ -6,9 +6,9 @@
     <title>CO5085 - Deep Learning Coursework</title>
     <meta
       name="description"
-      content="Landing page nhóm cho môn Học sâu và ứng dụng trong thị giác máy tính - CO5085."
+      content="Academic research dashboard cho môn Học sâu và ứng dụng trong thị giác máy tính - CO5085."
     />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20261009-dashboard" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261009-research-dashboard" />
   </head>
   <body>
     <header class="site-header">
@@ -20,7 +20,7 @@
         </span>
       </a>
       <nav class="nav-links" aria-label="Điều hướng chính">
-        <a href="index.html">Home</a>
+        <a class="nav-active" aria-current="page" href="index.html">Home</a>
         <a href="pages/exercises.html">Exercise</a>
         <a href="pages/assignment1.html">Assignment 1</a>
         <a href="pages/assignment2.html">Assignment 2</a>
@@ -30,41 +30,45 @@
 
     <main>
       <section class="hero hero-home" aria-labelledby="page-title">
-        <div class="hero-shade"></div>
         <div class="hero-content">
-          <p class="eyebrow">CO5085 - HK261</p>
-          <h1 id="page-title">Deep Learning Coursework Hub</h1>
-          <p class="hero-copy">
-            Trang tổng hợp bài nộp cho môn Học sâu và ứng dụng trong thị giác máy tính,
-            được tổ chức để giảng viên có thể kiểm tra đề bài, code, kết quả và báo cáo
-            của từng phần một cách nhanh nhất.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#submission-dashboard">Xem bài nộp</a>
-            <a class="button button-secondary" href="pages/assignment1.html">Assignment 1</a>
-            <a class="button button-secondary" href="pages/assignment2.html">Assignment 2</a>
+          <div class="hero-copy-block">
+            <p class="eyebrow">CO5085 - Học sâu và thị giác máy tính</p>
+            <h1 id="page-title">Deep Learning Coursework Hub</h1>
+            <p class="hero-copy">
+              Modern academic dashboard cho Exercise E1-E3, Assignment 1 và Assignment 2.
+              Trang này ưu tiên khả năng kiểm tra nhanh: đề bài, code, report, results và
+              protocol tái lập đều được gom theo từng hạng mục.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#coursework-dashboard">View Submission Dashboard</a>
+              <a class="button button-secondary" href="https://github.com/baond12/Deep_Learning_Course_HK261" target="_blank" rel="noreferrer">Open GitHub Repository</a>
+            </div>
+            <div class="hero-meta" aria-label="Tóm tắt trạng thái">
+              <span class="status-chip status-done">E1-E3 results available</span>
+              <span class="status-chip status-progress">Assignment 1 in progress</span>
+              <span class="status-chip status-planned">Assignment 2 baseline selected</span>
+            </div>
           </div>
-          <div class="hero-meta" aria-label="Tóm tắt nhanh">
-            <span>Exercise E1-E3: code và results đã có</span>
-            <span>Assignment 1: đang hoàn thiện thực nghiệm</span>
-            <span>Assignment 2: baseline S-DCNet đã chốt</span>
-          </div>
+          <figure class="hero-visual" aria-label="Neural network roadmap illustration">
+            <img src="assets/img/course-roadmap.png" alt="Neural network roadmap minh họa cho coursework Deep Learning" />
+          </figure>
         </div>
       </section>
 
       <section class="section intro-panel two-column">
         <div>
           <p class="section-kicker">Thông tin chung</p>
-          <h2>Ngữ cảnh môn học</h2>
+          <h2>Academic context</h2>
           <p class="section-lead">
-            Repo này đóng vai trò landing page nộp bài: mỗi bài có trang riêng, link đến
-            đề PDF, source code, hướng chạy Colab, kết quả thực nghiệm và phần báo cáo.
+            Website phục vụ nộp bài, báo cáo thực nghiệm và kiểm tra khả năng tái lập
+            kết quả. Nội dung được giữ trung thực với repository: phần nào chưa có kết quả
+            cuối sẽ được ghi là pending thay vì tạo metric giả.
           </p>
         </div>
         <div class="info-grid">
           <article class="info-card">
             <span class="card-label">Giảng viên</span>
-            <h3>TS. Lê Thành Sách</h3>
+            <h3>Lê Thành Sách, Nguyễn Quốc Minh</h3>
             <p>Khoa Khoa học và Kỹ thuật Máy tính, Đại học Bách Khoa HCM.</p>
           </article>
           <article class="info-card">
@@ -79,69 +83,90 @@
             <span class="card-label">Repository</span>
             <h3>Deep_Learning_Course_HK261</h3>
             <p>
-              <a
-                href="https://github.com/baond12/Deep_Learning_Course_HK261"
-                target="_blank"
-                rel="noreferrer"
-                >Source code trên GitHub</a
-              >
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261" target="_blank" rel="noreferrer">Source code trên GitHub</a>
             </p>
           </article>
         </div>
       </section>
 
-      <section class="section" id="submission-dashboard">
+      <section class="section" id="coursework-dashboard">
         <div class="section-heading">
-          <p class="section-kicker">Submission dashboard</p>
-          <h2>Bài nộp chính</h2>
+          <p class="section-kicker">Coursework dashboard</p>
+          <h2>Trạng thái từng bài</h2>
           <p>
-            Các card dưới đây là đường vào nhanh cho thầy khi chấm bài: trang mô tả,
-            đề bài gốc, source code, kết quả chạy và báo cáo hiện có.
+            Mỗi card thể hiện mục tiêu, deadline, trạng thái có bằng chứng trong repo và
+            các link chấm bài chính. Tiêu chí trạng thái: Completed khi có code, report và
+            results; In Progress khi còn thiếu kết quả cuối; Planned khi mới có topic/protocol.
           </p>
         </div>
-        <div class="submission-grid">
-          <article class="submission-card">
-            <span class="status-pill status-done">Exercise</span>
-            <h3>Exercise E1-E3</h3>
-            <p>
-              Softmax/MLP/CNN, Multi-Head Self-Attention, LSTM/GRU; có code PyTorch,
-              Colab guide, results và report dạng Markdown cho từng bài.
-            </p>
+        <div class="coursework-grid">
+          <article class="course-card">
+            <div class="course-card-top">
+              <span class="status-pill status-done">Completed</span>
+              <time datetime="2026-11-02">02/11/2026</time>
+            </div>
+            <h3>E1 - Softmax, MLP, CNN</h3>
+            <p>Phân loại MNIST bằng softmax classifier, MLP và CNN; so sánh tham số, learning curves, confusion matrix và mẫu lỗi.</p>
             <div class="card-actions">
-              <a href="pages/exercises.html">Trang Exercise</a>
-              <a href="Exercise/exercise-vne.pdf">Đề PDF</a>
               <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E1" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E1/report.md" target="_blank" rel="noreferrer">Report</a>
               <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E1/results" target="_blank" rel="noreferrer">Results</a>
             </div>
           </article>
 
-          <article class="submission-card">
-            <span class="status-pill status-progress">Assignment 1</span>
-            <h3>CNN vs Transformer</h3>
-            <p>
-              So sánh ResNet18 và ViT-B/16 trên CIFAR-100 subset, gồm from-scratch,
-              pretrained head-only, partial freeze và full fine-tune.
-            </p>
+          <article class="course-card">
+            <div class="course-card-top">
+              <span class="status-pill status-done">Completed</span>
+              <time datetime="2026-11-02">02/11/2026</time>
+            </div>
+            <h3>E2 - Multi-Head Self-Attention</h3>
+            <p>Tự viết MSA, đối chiếu PyTorch MSA và so sánh tokenization patch/row trên cùng split MNIST.</p>
             <div class="card-actions">
-              <a href="pages/assignment1.html">Trang Assignment 1</a>
-              <a href="Exercise/assignment1-vne.pdf">Đề PDF</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1" target="_blank" rel="noreferrer">Code</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1/results" target="_blank" rel="noreferrer">Results</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E2" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E2/report.md" target="_blank" rel="noreferrer">Report</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E2/results" target="_blank" rel="noreferrer">Results</a>
             </div>
           </article>
 
-          <article class="submission-card">
-            <span class="status-pill status-planned">Assignment 2</span>
-            <h3>Vehicle counting với S-DCNet</h3>
-            <p>
-              Chủ đề tự chọn đã chốt từ literature review: đếm phương tiện giao thông,
-              baseline S-DCNet, hướng reproduce trên dataset TRANCOS.
-            </p>
+          <article class="course-card">
+            <div class="course-card-top">
+              <span class="status-pill status-done">Completed</span>
+              <time datetime="2026-11-09">09/11/2026</time>
+            </div>
+            <h3>E3 - LSTM / GRU</h3>
+            <p>Biểu diễn ảnh thành chuỗi row/patch, huấn luyện LSTM và GRU, so sánh với baseline MLP/CNN.</p>
             <div class="card-actions">
-              <a href="pages/assignment2.html">Trang Assignment 2</a>
-              <a href="Exercise/assignment2-vne.pdf">Đề PDF</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A2" target="_blank" rel="noreferrer">Code</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/A2/README.md" target="_blank" rel="noreferrer">Notes</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E3" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E3/report.md" target="_blank" rel="noreferrer">Report</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E3/results" target="_blank" rel="noreferrer">Results</a>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-card-top">
+              <span class="status-pill status-progress">In Progress</span>
+              <time datetime="2026-11-09">09/11/2026</time>
+            </div>
+            <h3>Assignment 1 - CNN vs Transformer</h3>
+            <p>CIFAR-100 subset, ResNet18 vs ViT-B/16, from-scratch, pretrained head-only, partial freeze và full fine-tune.</p>
+            <div class="card-actions">
+              <a href="pages/assignment1.html">Overview</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/A1/report.md" target="_blank" rel="noreferrer">Report draft</a>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-card-top">
+              <span class="status-pill status-planned">Planned</span>
+              <time datetime="2026-11-16">16/11/2026</time>
+            </div>
+            <h3>Assignment 2 - Vehicle Counting</h3>
+            <p>Chủ đề đã chốt: vehicle counting trên TRANCOS, baseline S-DCNet, mục tiêu reproduce và phân tích paper.</p>
+            <div class="card-actions">
+              <a href="pages/assignment2.html">Reproduce plan</a>
+              <a href="Exercise/assignment2-vne.pdf">PDF</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A2" target="_blank" rel="noreferrer">Notes</a>
             </div>
           </article>
         </div>
@@ -154,86 +179,28 @@
         </div>
         <div class="quick-grid">
           <article class="quick-card">
-            <h3>Exercise E1-E3</h3>
+            <h3>Đề bài gốc</h3>
             <div class="link-panel">
-              <a href="Exercise/exercise-vne.pdf">Đề PDF</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E1" target="_blank" rel="noreferrer">Code E1</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E2" target="_blank" rel="noreferrer">Code E2</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E3" target="_blank" rel="noreferrer">Code E3</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E1/report.md" target="_blank" rel="noreferrer">Report E1</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E2/report.md" target="_blank" rel="noreferrer">Report E2</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E3/report.md" target="_blank" rel="noreferrer">Report E3</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E1/results" target="_blank" rel="noreferrer">Results E1</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E2/results" target="_blank" rel="noreferrer">Results E2</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E3/results" target="_blank" rel="noreferrer">Results E3</a>
+              <a href="Exercise/exercise-vne.pdf">Exercise PDF</a>
+              <a href="Exercise/assignment1-vne.pdf">Assignment 1 PDF</a>
+              <a href="Exercise/assignment2-vne.pdf">Assignment 2 PDF</a>
             </div>
           </article>
           <article class="quick-card">
-            <h3>Assignment 1</h3>
+            <h3>Exercise reports</h3>
             <div class="link-panel">
-              <a href="Exercise/assignment1-vne.pdf">Đề PDF</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1" target="_blank" rel="noreferrer">Code</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/A1/report.md" target="_blank" rel="noreferrer">Report</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1/results" target="_blank" rel="noreferrer">Results</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E1/report.md" target="_blank" rel="noreferrer">E1 report</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E2/report.md" target="_blank" rel="noreferrer">E2 report</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E3/report.md" target="_blank" rel="noreferrer">E3 report</a>
             </div>
           </article>
           <article class="quick-card">
-            <h3>Assignment 2</h3>
-            <div class="link-panel">
-              <a href="Exercise/assignment2-vne.pdf">Đề PDF</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A2" target="_blank" rel="noreferrer">Code</a>
-              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/A2/README.md" target="_blank" rel="noreferrer">Notes</a>
-              <a href="pages/assignment2.html">Reproduce plan</a>
+            <h3>Reports pending</h3>
+            <div class="pending-list">
+              <span>Final combined Exercise PDF: pending</span>
+              <span>Assignment 1 final PDF: pending</span>
+              <span>Assignment 2 final PDF: pending</span>
             </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-heading">
-          <p class="section-kicker">Progress board</p>
-          <h2>Trạng thái từng phần</h2>
-        </div>
-        <div class="progress-board">
-          <article class="progress-row">
-            <div>
-              <span class="status-pill status-done">E1</span>
-              <h3>Softmax, MLP, CNN</h3>
-            </div>
-            <p>Đã có training script, kết quả 20 epochs và report phân tích.</p>
-            <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E1/report.md" target="_blank" rel="noreferrer">Report</a>
-          </article>
-          <article class="progress-row">
-            <div>
-              <span class="status-pill status-done">E2</span>
-              <h3>Multi-Head Self-Attention</h3>
-            </div>
-            <p>Đã có custom/pytorch attention, kết quả thực nghiệm và report.</p>
-            <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E2/report.md" target="_blank" rel="noreferrer">Report</a>
-          </article>
-          <article class="progress-row">
-            <div>
-              <span class="status-pill status-done">E3</span>
-              <h3>LSTM và GRU</h3>
-            </div>
-            <p>Đã có LSTM/GRU cho ảnh, smoke test và kết quả thực nghiệm.</p>
-            <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E3/report.md" target="_blank" rel="noreferrer">Report</a>
-          </article>
-          <article class="progress-row">
-            <div>
-              <span class="status-pill status-progress">Assignment 1</span>
-              <h3>Large image classification</h3>
-            </div>
-            <p>Đang hoàn tất nhóm thí nghiệm ViT pretrained sau khi gặp giới hạn GPU.</p>
-            <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/A1/report.md" target="_blank" rel="noreferrer">Report</a>
-          </article>
-          <article class="progress-row">
-            <div>
-              <span class="status-pill status-planned">Assignment 2</span>
-              <h3>Paper reproduction</h3>
-            </div>
-            <p>Đã chọn S-DCNet làm baseline; bước kế tiếp là kiểm tra official code và protocol TRANCOS.</p>
-            <a href="pages/assignment2.html">Plan</a>
           </article>
         </div>
       </section>
@@ -299,4 +266,3 @@
     </footer>
   </body>
 </html>
-
