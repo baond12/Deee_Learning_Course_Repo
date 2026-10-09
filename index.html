@@ -32,24 +32,34 @@
       <section class="hero hero-home" aria-labelledby="page-title">
         <div class="hero-shade"></div>
         <div class="hero-content">
-          <p class="eyebrow">Học sâu và ứng dụng trong thị giác máy tính</p>
-          <h1 id="page-title">Coursework landing page</h1>
+          <p class="eyebrow">CO5085 - HK261</p>
+          <h1 id="page-title">Deep Learning Coursework Hub</h1>
           <p class="hero-copy">
-            Khung nộp bài cho Exercise E1-E3, Assignment 1 và Assignment 2, có sẵn
-            liên kết đề bài, code, báo cáo và timeline theo yêu cầu GitHub Pages.
+            Trang tổng hợp bài nộp cho môn Học sâu và ứng dụng trong thị giác máy tính,
+            được tổ chức để giảng viên có thể kiểm tra đề bài, code, kết quả và báo cáo
+            của từng phần một cách nhanh nhất.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="pages/exercises.html">Exercise E1-E3</a>
+            <a class="button button-primary" href="#submission-dashboard">Xem bài nộp</a>
             <a class="button button-secondary" href="pages/assignment1.html">Assignment 1</a>
             <a class="button button-secondary" href="pages/assignment2.html">Assignment 2</a>
+          </div>
+          <div class="hero-meta" aria-label="Tóm tắt nhanh">
+            <span>Exercise E1-E3: code và results đã có</span>
+            <span>Assignment 1: đang hoàn thiện thực nghiệm</span>
+            <span>Assignment 2: baseline S-DCNet đã chốt</span>
           </div>
         </div>
       </section>
 
-      <section class="section two-column">
+      <section class="section intro-panel two-column">
         <div>
           <p class="section-kicker">Thông tin chung</p>
-          <h2>Nhóm và giảng viên</h2>
+          <h2>Ngữ cảnh môn học</h2>
+          <p class="section-lead">
+            Repo này đóng vai trò landing page nộp bài: mỗi bài có trang riêng, link đến
+            đề PDF, source code, hướng chạy Colab, kết quả thực nghiệm và phần báo cáo.
+          </p>
         </div>
         <div class="info-grid">
           <article class="info-card">
@@ -61,7 +71,7 @@
             <span class="card-label">Học viên</span>
             <h3>Ngô Duy Bảo - 2570395</h3>
             <p>
-              GitHub:
+              Chủ repo:
               <a href="https://github.com/baond12" target="_blank" rel="noreferrer">baond12</a>
             </p>
           </article>
@@ -80,68 +90,174 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="submission-dashboard">
         <div class="section-heading">
-          <p class="section-kicker">Điều hướng bài nộp</p>
-          <h2>Exercise và Assignment</h2>
+          <p class="section-kicker">Submission dashboard</p>
+          <h2>Bài nộp chính</h2>
+          <p>
+            Các card dưới đây là đường vào nhanh cho thầy khi chấm bài: trang mô tả,
+            đề bài gốc, source code, kết quả chạy và báo cáo hiện có.
+          </p>
         </div>
         <div class="submission-grid">
           <article class="submission-card">
-            <span class="status-pill">E1-E3</span>
-            <h3>Exercise: image classification, MSA, LSTM/GRU</h3>
+            <span class="status-pill status-done">Exercise</span>
+            <h3>Exercise E1-E3</h3>
             <p>
-              Ba bài dùng cùng tập ảnh nhỏ, tự viết training loop PyTorch và nộp một báo
-              cáo PDF chung.
+              Softmax/MLP/CNN, Multi-Head Self-Attention, LSTM/GRU; có code PyTorch,
+              Colab guide, results và report dạng Markdown cho từng bài.
             </p>
             <div class="card-actions">
               <a href="pages/exercises.html">Trang Exercise</a>
               <a href="Exercise/exercise-vne.pdf">Đề PDF</a>
-              <a
-                href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/reports/exercises.pdf"
-                target="_blank"
-                rel="noreferrer"
-                >Báo cáo</a
-              >
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E1" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E1/results" target="_blank" rel="noreferrer">Results</a>
             </div>
           </article>
 
           <article class="submission-card">
-            <span class="status-pill">Assignment 1</span>
-            <h3>CNN vs Transformer trên tập ảnh lớn</h3>
+            <span class="status-pill status-progress">Assignment 1</span>
+            <h3>CNN vs Transformer</h3>
             <p>
-              So sánh CNN và Transformer với from-scratch, pretrained, freeze backbone,
-              freeze một phần và full fine-tune.
+              So sánh ResNet18 và ViT-B/16 trên CIFAR-100 subset, gồm from-scratch,
+              pretrained head-only, partial freeze và full fine-tune.
             </p>
             <div class="card-actions">
               <a href="pages/assignment1.html">Trang Assignment 1</a>
               <a href="Exercise/assignment1-vne.pdf">Đề PDF</a>
-              <a
-                href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/reports/assignment1.pdf"
-                target="_blank"
-                rel="noreferrer"
-                >Báo cáo</a
-              >
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1/results" target="_blank" rel="noreferrer">Results</a>
             </div>
           </article>
 
           <article class="submission-card">
-            <span class="status-pill">Assignment 2</span>
-            <h3>Chủ đề tự chọn và phân tích paper</h3>
+            <span class="status-pill status-planned">Assignment 2</span>
+            <h3>Vehicle counting với S-DCNet</h3>
             <p>
-              Xây dựng pipeline CV chạy được, so sánh ít nhất hai biến thể và phân tích
-              một paper liên quan.
+              Chủ đề tự chọn đã chốt từ literature review: đếm phương tiện giao thông,
+              baseline S-DCNet, hướng reproduce trên dataset TRANCOS.
             </p>
             <div class="card-actions">
               <a href="pages/assignment2.html">Trang Assignment 2</a>
               <a href="Exercise/assignment2-vne.pdf">Đề PDF</a>
-              <a
-                href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/reports/assignment2.pdf"
-                target="_blank"
-                rel="noreferrer"
-                >Báo cáo</a
-              >
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A2" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/A2/README.md" target="_blank" rel="noreferrer">Notes</a>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section class="section quick-section">
+        <div class="section-heading">
+          <p class="section-kicker">Quick links</p>
+          <h2>Đường dẫn chấm bài nhanh</h2>
+        </div>
+        <div class="quick-grid">
+          <article class="quick-card">
+            <h3>Exercise E1-E3</h3>
+            <div class="link-panel">
+              <a href="Exercise/exercise-vne.pdf">Đề PDF</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E1" target="_blank" rel="noreferrer">Code E1</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E2" target="_blank" rel="noreferrer">Code E2</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E3" target="_blank" rel="noreferrer">Code E3</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E1/report.md" target="_blank" rel="noreferrer">Report E1</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E2/report.md" target="_blank" rel="noreferrer">Report E2</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E3/report.md" target="_blank" rel="noreferrer">Report E3</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E1/results" target="_blank" rel="noreferrer">Results E1</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E2/results" target="_blank" rel="noreferrer">Results E2</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/E3/results" target="_blank" rel="noreferrer">Results E3</a>
+            </div>
+          </article>
+          <article class="quick-card">
+            <h3>Assignment 1</h3>
+            <div class="link-panel">
+              <a href="Exercise/assignment1-vne.pdf">Đề PDF</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/A1/report.md" target="_blank" rel="noreferrer">Report</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A1/results" target="_blank" rel="noreferrer">Results</a>
+            </div>
+          </article>
+          <article class="quick-card">
+            <h3>Assignment 2</h3>
+            <div class="link-panel">
+              <a href="Exercise/assignment2-vne.pdf">Đề PDF</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/tree/main/A2" target="_blank" rel="noreferrer">Code</a>
+              <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/A2/README.md" target="_blank" rel="noreferrer">Notes</a>
+              <a href="pages/assignment2.html">Reproduce plan</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="section-kicker">Progress board</p>
+          <h2>Trạng thái từng phần</h2>
+        </div>
+        <div class="progress-board">
+          <article class="progress-row">
+            <div>
+              <span class="status-pill status-done">E1</span>
+              <h3>Softmax, MLP, CNN</h3>
+            </div>
+            <p>Đã có training script, kết quả 20 epochs và report phân tích.</p>
+            <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E1/report.md" target="_blank" rel="noreferrer">Report</a>
+          </article>
+          <article class="progress-row">
+            <div>
+              <span class="status-pill status-done">E2</span>
+              <h3>Multi-Head Self-Attention</h3>
+            </div>
+            <p>Đã có custom/pytorch attention, kết quả thực nghiệm và report.</p>
+            <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E2/report.md" target="_blank" rel="noreferrer">Report</a>
+          </article>
+          <article class="progress-row">
+            <div>
+              <span class="status-pill status-done">E3</span>
+              <h3>LSTM và GRU</h3>
+            </div>
+            <p>Đã có LSTM/GRU cho ảnh, smoke test và kết quả thực nghiệm.</p>
+            <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/E3/report.md" target="_blank" rel="noreferrer">Report</a>
+          </article>
+          <article class="progress-row">
+            <div>
+              <span class="status-pill status-progress">Assignment 1</span>
+              <h3>Large image classification</h3>
+            </div>
+            <p>Đang hoàn tất nhóm thí nghiệm ViT pretrained sau khi gặp giới hạn GPU.</p>
+            <a href="https://github.com/baond12/Deep_Learning_Course_HK261/blob/main/A1/report.md" target="_blank" rel="noreferrer">Report</a>
+          </article>
+          <article class="progress-row">
+            <div>
+              <span class="status-pill status-planned">Assignment 2</span>
+              <h3>Paper reproduction</h3>
+            </div>
+            <p>Đã chọn S-DCNet làm baseline; bước kế tiếp là kiểm tra official code và protocol TRANCOS.</p>
+            <a href="pages/assignment2.html">Plan</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section two-column focus-section">
+        <div>
+          <p class="section-kicker">Assignment 2 focus</p>
+          <h2>S-DCNet reproduction</h2>
+          <p class="section-lead">
+            Literature review đã thu hẹp bài toán từ traffic density sang vehicle counting,
+            vì số lượng xe là tín hiệu trực tiếp hơn cho thiết lập camera ảnh tĩnh.
+          </p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-grid">
+            <span>Baseline paper</span>
+            <strong>S-DCNet: Spatial Divide-and-Conquer Network, ICCV 2019</strong>
+            <span>Dataset mục tiêu</span>
+            <strong>TRANCOS vehicle counting</strong>
+            <span>Metric ưu tiên</span>
+            <strong>MAE, GAME và phân tích failure cases</strong>
+            <span>Ghi chú học thuật</span>
+            <strong>Vehicle count không đồng nghĩa trực tiếp với physical traffic density.</strong>
+          </div>
         </div>
       </section>
 
