@@ -1,41 +1,41 @@
-# Chạy E1 trên Google Colab
+﻿# Cháº¡y E1 trÃªn Google Colab
 
 ## 1. Clone repo
 
 ```bash
-!git clone https://github.com/baond12/Deee_Learning_Course_Repo.git
-%cd Deee_Learning_Course_Repo
+!git clone https://github.com/baond12/Deep_Learning_Course_HK261.git
+%cd Deep_Learning_Course_HK261
 ```
 
-## 2. Cài dependencies
+## 2. CÃ i dependencies
 
-Colab thường đã có PyTorch. Nếu thiếu package, chạy:
+Colab thÆ°á»ng Ä‘Ã£ cÃ³ PyTorch. Náº¿u thiáº¿u package, cháº¡y:
 
 ```bash
 !pip install -r requirements.txt
 ```
 
-## 3. Train 3 mô hình
+## 3. Train 3 mÃ´ hÃ¬nh
 
 ```bash
 !python E1/train.py --models all --epochs 5 --batch-size 128 --device cuda --progress
 ```
 
-Nếu runtime không có GPU:
+Náº¿u runtime khÃ´ng cÃ³ GPU:
 
 ```bash
 !python E1/train.py --models all --epochs 5 --batch-size 128 --device cpu --progress
 ```
 
-## 4. Xem kết quả
+## 4. Xem káº¿t quáº£
 
-Kết quả nằm ở:
+Káº¿t quáº£ náº±m á»Ÿ:
 
 ```text
 E1/results/
 ```
 
-Các file quan trọng:
+CÃ¡c file quan trá»ng:
 
 - `summary.csv`
 - `metrics.json`
@@ -43,7 +43,7 @@ Các file quan trọng:
 - `confusion_matrix_*.png`
 - `misclassified_*.png`
 
-## 5. Commit kết quả từ Colab
+## 5. Commit káº¿t quáº£ tá»« Colab
 
 ```bash
 !git config user.email "ngobao.bk.tp@gmail.com"
@@ -53,6 +53,6 @@ Các file quan trọng:
 !git push
 ```
 
-Nếu Colab yêu cầu đăng nhập khi push, cách đơn giản hơn là tải thư mục `E1/results/`
-về máy rồi copy vào repo local, sau đó commit/push từ PowerShell.
+Náº¿u Colab yÃªu cáº§u Ä‘Äƒng nháº­p khi push, cÃ¡ch Ä‘Æ¡n giáº£n hÆ¡n lÃ  táº£i thÆ° má»¥c `E1/results/`
+vá» mÃ¡y rá»“i copy vÃ o repo local, sau Ä‘Ã³ commit/push tá»« PowerShell.
 

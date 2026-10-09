@@ -1,13 +1,13 @@
-# Chạy E3 trên Google Colab
+﻿# Cháº¡y E3 trÃªn Google Colab
 
 ## 1. Clone repo
 
 ```bash
-!git clone https://github.com/baond12/Deee_Learning_Course_Repo.git
-%cd Deee_Learning_Course_Repo
+!git clone https://github.com/baond12/Deep_Learning_Course_HK261.git
+%cd Deep_Learning_Course_HK261
 ```
 
-## 2. Cài dependencies
+## 2. CÃ i dependencies
 
 ```bash
 !pip install -r requirements.txt
@@ -19,13 +19,13 @@
 !python E3/smoke_test.py
 ```
 
-## 4. Train ảnh MNIST dạng chuỗi
+## 4. Train áº£nh MNIST dáº¡ng chuá»—i
 
 ```bash
 !python E3/train.py --experiments all --epochs 5 --batch-size 128 --device cuda --progress
 ```
 
-Nếu không có GPU:
+Náº¿u khÃ´ng cÃ³ GPU:
 
 ```bash
 !python E3/train.py --experiments all --epochs 5 --batch-size 128 --device cpu --progress
@@ -38,15 +38,15 @@ Nếu không có GPU:
 !python E3/train_sentiment.py --rnn-type gru --epochs 5 --device cuda
 ```
 
-## 6. Kết quả
+## 6. Káº¿t quáº£
 
-Kết quả ảnh nằm ở:
+Káº¿t quáº£ áº£nh náº±m á»Ÿ:
 
 ```text
 E3/results/
 ```
 
-Các file chính:
+CÃ¡c file chÃ­nh:
 
 - `summary.csv`
 - `comparison_e1_e2_e3.csv`
@@ -55,7 +55,7 @@ Các file chính:
 - `confusion_matrix_*.png`
 - `misclassified_*.png`
 
-Kết quả sentiment nằm ở:
+Káº¿t quáº£ sentiment náº±m á»Ÿ:
 
 ```text
 E3/results/sentiment/
