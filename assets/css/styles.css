@@ -89,6 +89,7 @@ a:hover {
   border-radius: 8px;
   color: var(--ink);
   font-weight: 650;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
